@@ -1,4 +1,4 @@
-module assert
+module github.com/aethne0/assert
 
 go 1.25.5
 
