@@ -1,2 +1,1 @@
-asserts for Go
-might add more shared code into this eventually too
+not having asserts in the language is SO golang
