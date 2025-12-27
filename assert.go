@@ -66,7 +66,7 @@ func False(condition bool, msg string) {
 }
 
 func Eq[T comparable](a T, b T, msg string) {
-	if a != b {
+	if !(a == b) {
 		panic(makeMsg("left == right", msg, []pair{
 			{label: "Left", value: a},
 			{label: "Right", value: b},
@@ -75,7 +75,7 @@ func Eq[T comparable](a T, b T, msg string) {
 }
 
 func Ne[T comparable](a T, b T, msg string) {
-	if a == b {
+	if !(a != b) {
 		panic(makeMsg("left != right", msg, []pair{
 			{label: "Left", value: a},
 			{label: "Right", value: b},
@@ -84,7 +84,7 @@ func Ne[T comparable](a T, b T, msg string) {
 }
 
 func Gt[T cmp.Ordered](a T, b T, msg string) {
-	if a > b {
+	if !(a > b) {
 		panic(makeMsg("left > right", msg, []pair{
 			{label: "Left", value: a},
 			{label: "Right", value: b},
@@ -93,7 +93,7 @@ func Gt[T cmp.Ordered](a T, b T, msg string) {
 }
 
 func Lt[T cmp.Ordered](a T, b T, msg string) {
-	if a < b {
+	if !(a < b) {
 		panic(makeMsg("left < right", msg, []pair{
 			{label: "Left", value: a},
 			{label: "Right", value: b},
@@ -102,7 +102,7 @@ func Lt[T cmp.Ordered](a T, b T, msg string) {
 }
 
 func Ge[T cmp.Ordered](a T, b T, msg string) {
-	if a >= b {
+	if !(a >= b) {
 		panic(makeMsg("left >= right", msg, []pair{
 			{label: "Left", value: a},
 			{label: "Right", value: b},
@@ -111,7 +111,7 @@ func Ge[T cmp.Ordered](a T, b T, msg string) {
 }
 
 func Le[T cmp.Ordered](a T, b T, msg string) {
-	if a <= b {
+	if !(a <= b) {
 		panic(makeMsg("left <= right", msg, []pair{
 			{label: "Left", value: a},
 			{label: "Right", value: b},
